@@ -1,0 +1,60 @@
+﻿@model IEnumerable<DSW1_CL2_VillavicencioCardenasJoseAntonio.Models.Horario>
+
+@{
+    ViewData["Title"] = "Consulta";
+}
+
+<h1>Consulta</h1>
+
+@using (Html.BeginForm())
+{
+    <em>Fecha:</em>
+    @Html.TextBox("fecha1","",new{type = "date"})
+    <button>Consultar</button>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.codhorario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nomcurso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fecinicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fectermino)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.vacantes)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.codhorario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomcurso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecinicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fectermino)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vacantes)
+            </td>
+            <td>
+                @Html.ActionLink("Registrar", "Registrar", new { id=item.codhorario })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
