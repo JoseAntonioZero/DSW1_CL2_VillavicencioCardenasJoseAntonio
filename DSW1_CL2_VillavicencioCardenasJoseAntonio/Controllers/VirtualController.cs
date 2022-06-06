@@ -9,9 +9,9 @@ namespace DSW1_CL2_VillavicencioCardenasJoseAntonio.Controllers
 {
     public class VirtualController : Controller
     {
-        string cadena =
-            @"server = DESKTOP-8S275VH;database = Virtuales2022;Trusted_Connection = True;" +
-            "MultipleActiveResultSets = True;TrustServerCertificate = False;Encrypt = False";
+        string cadena = @"server = (local);database = Virtuales2022;" +
+                    "Trusted_Connection = True;" + "MultipleActiveResultSets = True;" +
+                    "TrustServerCertificate = False;" + "Encrypt = False";
         IEnumerable<Horario> listadoFecha(DateTime f1)
         {
             List<Horario> temporal = new List<Horario>();
@@ -68,6 +68,11 @@ namespace DSW1_CL2_VillavicencioCardenasJoseAntonio.Controllers
         }
 
         Horario Buscar(int codigo = 0)
+        {
+            return listado().FirstOrDefault(c => c.codhorario == codigo);
+        }
+
+        Horario BuscarA(int codigo = 0)
         {
             return listado().FirstOrDefault(c => c.codhorario == codigo);
         }
