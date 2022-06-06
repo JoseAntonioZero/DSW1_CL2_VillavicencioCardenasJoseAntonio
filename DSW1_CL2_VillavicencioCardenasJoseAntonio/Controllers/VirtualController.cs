@@ -12,6 +12,9 @@ namespace DSW1_CL2_VillavicencioCardenasJoseAntonio.Controllers
         string cadena = @"server = (local);database = Virtuales2022;" +
                     "Trusted_Connection = True;" + "MultipleActiveResultSets = True;" +
                     "TrustServerCertificate = False;" + "Encrypt = False";
+
+        //PRUEBAAAAAAAAAAAAAAAAAAA
+
         IEnumerable<Horario> listadoFecha(DateTime f1)
         {
             List<Horario> temporal = new List<Horario>();
